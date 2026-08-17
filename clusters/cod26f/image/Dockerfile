@@ -22,19 +22,18 @@ RUN apt-get update && \
 
 USER ${NB_UID}
 
-# Install CM1 deps in base environment
+COPY environment.yaml /tmp/cluster_environment.yaml
+# Install CM1 deps in base environment; then update the unidata-standard environment before cleaning mamba's cache
 RUN mamba install --quiet --yes \
       'conda-forge::libnetcdf' \
       'conda-forge::netcdf-fortran' && \
+    mamba env update \
+      -n unidata-standard \
+      -f /tmp/cluster_environment.yaml && \
+    conda rename -n unidata-standard $DEFAULT_ENV_NAME && \
     mamba clean --all -f -y
 
 RUN cd /cm1 && \
     wget https://www2.mmm.ucar.edu/people/bryan/cm1/cm1r21.1.tar.gz
 
-COPY environment.yaml /tmp/cluster_environment.yaml
-RUN mamba env update \
-      -n unidata-standard \
-      -f /tmp/cluster_environment.yaml && \
-    mamba clean --all -f -y && \
-    conda rename -n unidata-standard $DEFAULT_ENV_NAME
 
