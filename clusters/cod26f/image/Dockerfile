@@ -1,7 +1,7 @@
 ARG BASE_CONTAINER=unidata/unidata-standard:2026Aug13_175701_dfae
 FROM $BASE_CONTAINER
 
-ENV DEFAULT_ENV_NAME=cluster_name \
+ENV DEFAULT_ENV_NAME=unidata-standard \
     EDITOR=nano \
     VISUAL=nano \
     NETCDF=/opt/conda \
@@ -27,10 +27,9 @@ COPY environment.yaml /tmp/cluster_environment.yaml
 RUN mamba install --quiet --yes \
       'conda-forge::libnetcdf' \
       'conda-forge::netcdf-fortran' && \
-    mamba env update \
+    conda env update \
       -n unidata-standard \
       -f /tmp/cluster_environment.yaml && \
-    conda rename -n unidata-standard $DEFAULT_ENV_NAME && \
     mamba clean --all -f -y
 
 RUN cd /cm1 && \
