@@ -33,6 +33,5 @@ dependencies:
   - nb_conda_kernels
   - ipykernel
   - ultraplot
-  - pip:
-    - miepython
-    - wrf-python
+  - miepython
+  - wrf-python
