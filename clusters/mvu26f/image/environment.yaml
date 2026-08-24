@@ -1,0 +1,38 @@
+name: unidata-standard
+channels:
+  - rttools
+  - conda-forge
+dependencies:
+  # Required by JupyterLab
+  - 'python<3.13'
+  - nb_conda_kernels
+  - ipykernel
+  # User requested packages
+  - numpy
+  - matplotlib
+  - pandas
+  - scipy
+  - metpy
+  - xarray
+  - scikit-learn
+  - cartopy
+  - seaborn
+  - netcdf4
+  - pyorbital
+  - pytz
+  - siphon
+  - statsmodels
+  - pip
+  - cfgrib
+  - climlab
+  - climlab-rrtmg
+  - typhon
+  - ipympl
+  - pint-xarray
+  - pyarts
+  - nb_conda_kernels
+  - ipykernel
+  - ultraplot
+  - pip:
+    - miepython
+    - wrf-python
