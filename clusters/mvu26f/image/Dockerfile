@@ -3,7 +3,9 @@ FROM $BASE_CONTAINER
 
 ENV DEFAULT_ENV_NAME=unidata-standard \
     EDITOR=nano \
-    VISUAL=nano
+    VISUAL=nano \
+    ARTS_DATA_PATH=/share/ESCI345/arts-data/arts-cat-data-2.6.12/ \
+    ARTS_XML_ATMO=/share/ESCI345/arts-data/arts-xml-data-2.6.12/
 
 LABEL maintainer="Unidata <support-gateway@unidata.ucar.edu>"
 
