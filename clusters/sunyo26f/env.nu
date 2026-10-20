@@ -39,17 +39,17 @@ $env.jupyterhub.authentication = "./jhub/authentication.yaml"
 $env.jupyterhub.jhub = {
   values_path: ./jhub/values.yaml,
   admins: [], # E.g. [ admin1 admin2 admin3 ]; Unidata admins added automatically, putting them here is unnecessary
-  image_name: "unidata/unidata-standard", # String: Defaults to unidata/$env.jupyterhub.cluster.name if kept `null` here
-  image_tag: "2026Aug13_175701_dfae", # String: SET ME!
-  # git_repos: [ # List of records; defaults to `[]` if set to null or commented out
-  #   {
-  #     server: null, # String: Defaults to https://github.com
-  #     user: null, # SET ME!
-  #     repo: null, # SET ME!
-  #     branch: null, # String: Defaults to "main"
-  #     dest_dir: null # Defaults to repo name if kept `null` here
-  #   },
-  # ]
+  image_name: "unidata/sunyo26f", # String: Defaults to unidata/$env.jupyterhub.cluster.name if kept `null` here
+  image_tag: "2026Oct20_212429_27df", # String: SET ME!
+  git_repos: [ # List of records; defaults to `[]` if set to null or commented out
+    {
+      server: null, # String: Defaults to https://github.com
+      user: unidata, # SET ME!
+      repo: supervised-ml-readiness, # SET ME!
+      branch: null, # String: Defaults to "main"
+      dest_dir: null # Defaults to repo name if kept `null` here
+    },
+  ]
   user_placeholders: null, # Change to `null` to disable user_placeholders
   desired_profiles: [Standard "Unidata Desktop"] # Choose from: [Low Standard Medium High IDV]
   default_profile: "Standard" # Choose from the list in "desired_profiles" above
