@@ -6,6 +6,7 @@ dependencies:
   - 'python<3.13'
   - nb_conda_kernels
   - ipykernel
+  - xgboost>=2.0.3
   # User requested packages
   - pip:
     # It is recommended to install a package using pip as a last resort, i.e.
