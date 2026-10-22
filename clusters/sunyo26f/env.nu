@@ -40,7 +40,7 @@ $env.jupyterhub.jhub = {
   values_path: ./jhub/values.yaml,
   admins: [], # E.g. [ admin1 admin2 admin3 ]; Unidata admins added automatically, putting them here is unnecessary
   image_name: "unidata/sunyo26f", # String: Defaults to unidata/$env.jupyterhub.cluster.name if kept `null` here
-  image_tag: "2026Oct21_173651_64ae", # String: SET ME!
+  image_tag: "2026Oct22_171947_e523", # String: SET ME!
   git_repos: [ # List of records; defaults to `[]` if set to null or commented out
     {
       server: null, # String: Defaults to https://github.com

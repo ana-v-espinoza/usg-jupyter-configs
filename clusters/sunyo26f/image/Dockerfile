@@ -12,3 +12,5 @@ RUN mamba env update \
       -n unidata-standard \
       -f /tmp/cluster_environment.yaml && \
     mamba clean --all -f -y
+
+COPY files/update_material.ipynb /
