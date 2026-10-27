@@ -47,8 +47,9 @@ COPY --chown=1000:100 \
      files/update_workshop_material.ipynb \
      files/bashrc_lrose \
      files/condarc \
-     files/profile \
      /
+
+RUN cat /bashrc_lrose >> /etc/skel/.bashrc
 
 USER ${NB_USER}
 
